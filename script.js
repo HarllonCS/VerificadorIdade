@@ -1,4 +1,5 @@
 img = document.createElement('img')
+btnAtualizar = document.createElement('input')
 
 function verificar() {
     var nome =  document.querySelector('#iNome').value.toUpperCase()
@@ -7,8 +8,29 @@ function verificar() {
     var masc = document.querySelector('#iMasc')
     var p = document.querySelector('p')
     var sec = document.querySelector('section')
-    
+
     sec.appendChild(img)
+    sec.appendChild(btnAtualizar)
+
+    btnAtualizar.type = 'button'
+    btnAtualizar.value = 'ATUALIZAR'
+    btnAtualizar.setAttribute('onclick', 'btnAction(1)')
+    btnAtualizar.setAttribute('onmouseover', 'btnAction(2)')
+    btnAtualizar.setAttribute('onmouseout', 'btnAction(3)')
+    
+    btnStyle = btnAtualizar.style
+
+    btnStyle.display = 'block'
+    btnStyle.margin = 'auto'
+    btnStyle.cursor = 'pointer'
+    btnStyle.backgroundColor = '#0d88b5'
+    btnStyle.color = 'white'
+    btnStyle.fontWeight = 'bold'
+    btnStyle.fontFamily = 'Arial, Helvetica, sans-serif'
+    btnStyle.border = '1px solid black'
+    btnStyle.borderRadius = '10px'
+    btnStyle.fontSize = '12pt'
+    btnStyle.padding = '11px'
 
     var idade = new Date().getFullYear() - ano
 
@@ -40,5 +62,21 @@ function verificar() {
         }
     } else {
         alert("[ERRO]")
+    }
+}
+
+function btnAction(act) {
+    switch (act) {
+        case 1:
+            location.reload(true)
+            break;
+    
+        case 2:
+            btnAtualizar.style.backgroundColor = '#089dbf'
+            break;
+
+        case 3:
+            btnAtualizar.style.backgroundColor = '#0d88b5'
+            break;
     }
 }
