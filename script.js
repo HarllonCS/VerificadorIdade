@@ -4,13 +4,11 @@ btnAtualizar = document.createElement('input')
 function verificar() {
     var nome =  document.querySelector('#iNome').value.toUpperCase()
     var ano = parseInt(document.querySelector('#iAno').value)
-    var fem = document.querySelector('#iFem')
     var masc = document.querySelector('#iMasc')
     var p = document.querySelector('p')
     var sec = document.querySelector('section')
 
     sec.appendChild(img)
-    sec.appendChild(btnAtualizar)
 
     btnAtualizar.type = 'button'
     btnAtualizar.value = 'ATUALIZAR'
@@ -36,6 +34,9 @@ function verificar() {
     var idade = anoAtual - ano
 
     if (ano >= 1870 && ano < anoAtual && nome.length > 0) {
+
+        sec.appendChild(btnAtualizar)
+
         if (idade < 18) {
             if (masc.checked) {
                 p.innerHTML = `<strong>${nome}</strong> é um <strong>menino</strong> de <strong>${idade}</strong> anos.`
@@ -61,7 +62,9 @@ function verificar() {
                 img.src = 'imgs/idosa-mulher.png'
             }
         }
-    } else if (ano < 1870 || ano > anoAtual || ano == 0) {
+    } else if (nome.length == 0){
+        alert('O nome não pode estar vazio')
+    } else {
         alert("O ano deve ser entre 1870 e " + parseInt(anoAtual - 1))
     }
 }

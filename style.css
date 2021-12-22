@@ -5,10 +5,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
+header {
     text-align: center;
     color: white;
-    margin-top: 100pt;
+    margin-top: 50pt;
 }
 
 .tela {
