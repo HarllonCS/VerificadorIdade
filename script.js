@@ -32,9 +32,10 @@ function verificar() {
     btnStyle.fontSize = '12pt'
     btnStyle.padding = '11px'
 
-    var idade = new Date().getFullYear() - ano
+    var anoAtual = new Date().getFullYear()
+    var idade = anoAtual - ano
 
-    if (ano >= 1870 && ano < new Date().getFullYear() && nome.length > 0) {
+    if (ano >= 1870 && ano < anoAtual && nome.length > 0) {
         if (idade < 18) {
             if (masc.checked) {
                 p.innerHTML = `<strong>${nome}</strong> é um <strong>menino</strong> de <strong>${idade}</strong> anos.`
@@ -60,8 +61,8 @@ function verificar() {
                 img.src = 'imgs/idosa-mulher.png'
             }
         }
-    } else {
-        alert("[ERRO]")
+    } else if (ano < 1870 || ano > anoAtual || ano == 0) {
+        alert("O ano deve ser entre 1870 e " + parseInt(anoAtual - 1))
     }
 }
 
