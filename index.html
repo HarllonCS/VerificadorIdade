@@ -15,28 +15,30 @@
 
     <section class="tela">
         <div class="nome">
-            <label for="idNome">DIGITE O NOME: </label>
-            <input type="text" id="idNome" class="cNome">
+            <label for="iNome">DIGITE O NOME: </label>
+            <input type="text" id="iNome" class="cNome">
         </div>
 
         <div class="ano">
-            <label for="idAno">DIGITE O ANO DE NASCIMENTO: </label>
-            <input type="number" id="idAno" max="2020" min="0" class="cAno">
+            <label for="iAno">DIGITE O ANO DE NASCIMENTO: </label>
+            <input type="number" id="iAno" max="2020" min="1870" class="cAno">
         </div>
 
         <div class="sexo">
-            <input type="radio" name="nSexo" id="idMasc" checked>
-            <label for="idMasc">MASCULINO</label>
-            <input type="radio" name="nSexo" id="idFem">
-            <label for="idFem">FEMININO</label>
+            <input type="radio" name="nSexo" id="iMasc" checked>
+            <label for="iMasc">MASCULINO</label>
+            <input type="radio" name="nSexo" id="iFem">
+            <label for="iFem">FEMININO</label>
         </div>
 
         <input class="btn" type="button" value="VERIFICAR" onclick="verificar()">
 
+        <p>Preencha os dados acima!</p>
+
         <script src="script.js"></script>
     </section>
     <footer class="rdp">
-        <sup>&copy;</sup> HarllonCS
+        <sup>&copy;</sup>HarllonCS
     </footer>
 </body>
 </html>
