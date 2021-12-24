@@ -8,7 +8,8 @@ function verificar() {
     var p = document.querySelector('p')
     var sec = document.querySelector('section')
 
-    sec.appendChild(img)
+    var anoAtual = new Date().getFullYear()
+    var idade = anoAtual - ano
 
     btnAtualizar.type = 'button'
     btnAtualizar.value = 'ATUALIZAR'
@@ -30,11 +31,9 @@ function verificar() {
     btnStyle.fontSize = '12pt'
     btnStyle.padding = '11px'
 
-    var anoAtual = new Date().getFullYear()
-    var idade = anoAtual - ano
-
     if (ano >= 1870 && ano < anoAtual && nome.length > 0) {
-
+        
+        sec.appendChild(img)
         sec.appendChild(btnAtualizar)
 
         if (idade < 18) {
