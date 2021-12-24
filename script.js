@@ -64,7 +64,7 @@ function verificar() {
     } else if (nome.length == 0){
         alert('O nome não pode estar vazio')
     } else {
-        alert("O ano deve ser entre 1870 e " + parseInt(anoAtual - 1))
+        alert('O ano deve ser entre 1870 e ' + parseInt(anoAtual - 1))
     }
 }
 
